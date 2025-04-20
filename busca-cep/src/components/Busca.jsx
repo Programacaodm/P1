@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
-import axios from 'axios'; 
+import axios from 'axios';
 
-export default function Busca() {
+export default function Busca({ onNovaLocalidade }) {
   const [input, setInput] = useState('');
 
   const handleBusca = async () => {
@@ -20,11 +20,11 @@ export default function Busca() {
         return;
       }
 
-      console.log(response.data); 
+      onNovaLocalidade(response.data); // envia os dados para o App
 
     } catch (error) {
       alert("Erro ao buscar o CEP.");
-      console.error(error); 
+      console.error(error);
     }
   };
 

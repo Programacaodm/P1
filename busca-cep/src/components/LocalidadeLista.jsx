@@ -1,7 +1,3 @@
-import React, { useState } from 'react';
-import { InputText } from 'primereact/inputtext';
-import { Button } from 'primereact/button';
-
 export default function LocalidadeLista() {
     const localidades = [
       { cep: '01001-000', localidade: 'São Paulo' },
