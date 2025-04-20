@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import axios from 'axios';
@@ -20,7 +20,7 @@ export default function Busca({ onNovaLocalidade }) {
         return;
       }
 
-      onNovaLocalidade(response.data); // envia os dados para o App
+      onNovaLocalidade(response.data);
 
     } catch (error) {
       alert("Erro ao buscar o CEP.");
@@ -35,11 +35,10 @@ export default function Busca({ onNovaLocalidade }) {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-
-      <Button 
-        label="Buscar" 
-        icon="pi pi-search" 
-        onClick={handleBusca} 
+      <Button
+        label="Buscar"
+        icon="pi pi-search"
+        onClick={handleBusca}
         className="mt-2"
       />
     </div>

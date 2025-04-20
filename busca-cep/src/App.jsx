@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Busca from './components/Busca';
+import LocalidadeLista from './components/LocalidadeLista';
 
 function App() {
   const [localidades, setLocalidades] = useState([]);
@@ -12,20 +13,8 @@ function App() {
     <div className="App" style={{ padding: '2rem' }}>
       <h1>Hello, P1</h1>
       <Busca onNovaLocalidade={adicionarLocalidade} />
-      
-      <ul>
-        {localidades.map((loc, index) => (
-         
-         <li key={index} >
-          {loc.cep} <br />
-          {loc.logradouro} <br />
-          {loc.bairro} <br />
-          {loc.localidade}/{loc.uf} <br />
-          <hr style={{ width: "200px", marginLeft: "0", borderTop: "1px solid #ccc" }} />
-        </li>
-        
-        ))}
-      </ul>
+      <LocalidadeLista localidades={localidades} />
+
     </div>
   );
 }
